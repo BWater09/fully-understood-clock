@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>とけー</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.5.0.slim.js"
+        integrity="sha256-sCexhaKpAfuqulKjtSY7V9H7QT0TCN90H+Y5NlmqOUE=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(() => {
+            setInterval(() => {
+                let now = new Date();
+                $("#clock_body").text(`${now.toLocaleTimeString()}`);
+            }, 100);
+        });
+    </script>
+    <style>
+        body {
+            background-color: green;
+            font-family: 'Sawarabi Mincho', sans-serif;
+            font-size: 60px;
+            color: white;
+        }
+
+        div {
+            width: 266px;
+            height: 130px;
+            border-radius: 30px;
+            border: 2px white solid;
+        }
+
+        span {
+            position: absolute;
+        }
+
+        #clock_body {
+            left: 90px;
+            top: 45px;
+        }
+
+        #perfect {
+            font-size: 32px;
+            left: 90px;
+            top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span id="perfect">現在時刻</span>
+        <span id="clock_body"></span>
+    </div>
+</body>
+
+</html>
