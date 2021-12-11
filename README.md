@@ -4,7 +4,6 @@
 
 ![image.png](image.png)
 
-
-## Use
+## Sample
 
 [https://bwater09.github.io/fully-understood-clock/fully-understood-clock.html](https://bwater09.github.io/fully-understood-clock/fully-understood-clock.html)
