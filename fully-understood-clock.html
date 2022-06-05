@@ -7,15 +7,14 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.5.0.slim.js"
-        integrity="sha256-sCexhaKpAfuqulKjtSY7V9H7QT0TCN90H+Y5NlmqOUE=" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        $(() => {
+        window.onload = () => {
+            const formatter = new Intl.DateTimeFormat('ja-JP', { timeStyle: 'medium' });
+            const target = document.getElementById("clock_body");
             setInterval(() => {
-                let now = new Date();
-                $("#clock_body").text(`${now.toLocaleTimeString()}`);
+                target.innerText = `${formatter.format(new Date())}`;
             }, 100);
-        });
+        };
     </script>
     <style>
         body {
@@ -25,15 +24,19 @@
             color: white;
         }
 
-        div {
+        span {
+            position: absolute;
+        }
+
+        #frame {
             width: 266px;
             height: 130px;
             border-radius: 30px;
             border: 2px white solid;
-        }
-
-        span {
-            position: absolute;
+            box-shadow: rgba(30, 30, 30, 0.2) 0px 0px 6px 1px inset, rgba(30, 30, 30, 0.2) 0px 0px 6px 1px;
+            -webkit-box-shadow: rgba(30, 30, 30, 0.2) 0px 0px 5px 1px inset, rgba(30, 30, 30, 0.2) 0px 0px 5px 1px;
+            -moz-box-shadow: rgba(30, 30, 30, 0.2) 0px 0px 5px 1px inset, rgba(30, 30, 30, 0.2) 0px 0px 6px 1px;
+            text-shadow: rgba(30, 30, 30, 0.2) 0px 0px 7px;
         }
 
         #clock_body {
@@ -46,11 +49,12 @@
             left: 90px;
             top: 20px;
         }
+
     </style>
 </head>
 
 <body>
-    <div>
+    <div id="frame">
         <span id="perfect">現在時刻</span>
         <span id="clock_body"></span>
     </div>
